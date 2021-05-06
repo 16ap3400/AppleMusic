@@ -15,6 +15,7 @@
 		0B8936602638D85900E9304A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B89365E2638D85900E9304A /* LaunchScreen.storyboard */; };
 		0B8D05D326446CCD0058B80D /* RSSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8D05D226446CCD0058B80D /* RSSViewModel.swift */; };
 		0B8D05D726448B1D0058B80D /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8D05D626448B1D0058B80D /* Album.swift */; };
+		0B8D05DA2644AFE50058B80D /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8D05D92644AFE50058B80D /* Feed.swift */; };
 		BF6F5A37EE56398E18FB44DB /* Pods_AppleMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B97E1F93CB32DFB717E62F6 /* Pods_AppleMusic.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		0B8936612638D85900E9304A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B8D05D226446CCD0058B80D /* RSSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSViewModel.swift; sourceTree = "<group>"; };
 		0B8D05D626448B1D0058B80D /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		0B8D05D92644AFE50058B80D /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		1B97E1F93CB32DFB717E62F6 /* Pods_AppleMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppleMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8750DDA2703AFCD49C65B2 /* Pods-AppleMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleMusic.release.xcconfig"; path = "Target Support Files/Pods-AppleMusic/Pods-AppleMusic.release.xcconfig"; sourceTree = "<group>"; };
 		A75A9965C9F371D7A03D6221 /* Pods-AppleMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleMusic.debug.xcconfig"; path = "Target Support Files/Pods-AppleMusic/Pods-AppleMusic.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				0B8D05D626448B1D0058B80D /* Album.swift */,
+				0B8D05D92644AFE50058B80D /* Feed.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B8936542638D85800E9304A /* AppDelegate.swift in Sources */,
+				0B8D05DA2644AFE50058B80D /* Feed.swift in Sources */,
 				0B8D05D326446CCD0058B80D /* RSSViewModel.swift in Sources */,
 				0B8936562638D85800E9304A /* SceneDelegate.swift in Sources */,
 				0B8936582638D85800E9304A /* ContentView.swift in Sources */,

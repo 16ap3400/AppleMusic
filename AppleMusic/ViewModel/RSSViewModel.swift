@@ -29,20 +29,41 @@ class RSSViewModel: ObservableObject {
             if let json = response.value {
                 if  (json as? [String : AnyObject]) != nil{
                     if let dictionaryArray = json as? Dictionary<String, Dictionary<String, AnyObject?>> {
-                        let jsonArray = dictionaryArray["feed"]!["results"]
+                        let jsonArray = dictionaryArray["feed"]!["results"]!
+                        let data = response.data
+                        
+//                        print(response.value)
+                        let json = try? JSONDecoder().decode(Feed.self, from: response.value as! Data)
 
-                        if let jsonArray = jsonArray as? Array<Dictionary<String, AnyObject?>>{
-                            for i in 0..<jsonArray.count{
+                        if let json = json {
+                            for i in 0..<json.results.count {
                                 print("\(i)th album: \n")
-                                let json = jsonArray[i]
-                                if let artistName = json["artistName"] as? String, let name = json["name"] as? String, let contentAdvisoryRating = json["contentAdvvisoryRating"] as? String, let artURL = json["artworkUrl100"] as? String {
-                                self.albums.append(Album(artistName: artistName, name: name, contentAdvisoryRating: contentAdvisoryRating, artURL: artURL))
+                                if let artistName = json.results[i].artistName as? String, let name = json.results[i].name as? String, let contentAdvisoryRating = json.results[i].contentAdvisoryRating as? String, let artworkUrl100 = json.results[i].artworkUrl100 as? String {
+                                    self.albums.append(Album(artistName: artistName, name: name, contentAdvisoryRating: contentAdvisoryRating, artworkUrl100: artworkUrl100))
                                 }
                                 if self.albums.count > 0 {
                                     print(self.albums[self.albums.count-1].artistName)
                                 }
                             }
+                        } else {
+                            print("Error decoding JSON")
+                            print(json)
                         }
+                        
+                        
+//                        if let jsonArray = jsonArray as? Array<Dictionary<String, AnyObject?>>{
+//                            for i in 0..<jsonArray.count{
+//                                print("\(i)th album: \n")
+//
+//                                let json = jsonArray[i]
+//                                if let artistName = json["artistName"] as? String, let name = json["name"] as? String, let contentAdvisoryRating = json["contentAdvvisoryRating"] as? String, let artURL = json["artworkUrl100"] as? String {
+//                                self.albums.append(Album(artistName: artistName, name: name, contentAdvisoryRating: contentAdvisoryRating, artURL: artURL))
+//                                }
+//                                if self.albums.count > 0 {
+//                                    print(self.albums[self.albums.count-1].artistName)
+//                                }
+//                            }
+//                        }
                     }
                 }
             }
