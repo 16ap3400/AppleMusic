@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B7169422645A1BD008FC194 /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7169412645A1BD008FC194 /* AlbumViewModel.swift */; };
+		0B71694D2645BEB4008FC194 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B71694C2645BEB4008FC194 /* Response.swift */; };
 		0B8936542638D85800E9304A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8936532638D85800E9304A /* AppDelegate.swift */; };
 		0B8936562638D85800E9304A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8936552638D85800E9304A /* SceneDelegate.swift */; };
 		0B8936582638D85800E9304A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8936572638D85800E9304A /* ContentView.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B7169412645A1BD008FC194 /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
+		0B71694C2645BEB4008FC194 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		0B8936502638D85800E9304A /* AppleMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B8936532638D85800E9304A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B8936552638D85800E9304A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +52,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B7169462645AEDA008FC194 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0B8936532638D85800E9304A /* AppDelegate.swift */,
+				0B8936552638D85800E9304A /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		0B8936472638D85800E9304A = {
 			isa = PBXGroup;
 			children = (
@@ -69,14 +82,11 @@
 		0B8936522638D85800E9304A /* AppleMusic */ = {
 			isa = PBXGroup;
 			children = (
+				0B7169462645AEDA008FC194 /* Delegates */,
+				0B8D05CE26446C900058B80D /* Model */,
 				0B8D05D026446CA10058B80D /* ViewModel */,
 				0B8D05CF26446C9B0058B80D /* View */,
-				0B8936532638D85800E9304A /* AppDelegate.swift */,
-				0B8D05CE26446C900058B80D /* Model */,
-				0B8936552638D85800E9304A /* SceneDelegate.swift */,
-				0B8936572638D85800E9304A /* ContentView.swift */,
 				0B8936592638D85900E9304A /* Assets.xcassets */,
-				0B89365E2638D85900E9304A /* LaunchScreen.storyboard */,
 				0B8936612638D85900E9304A /* Info.plist */,
 				0B89365B2638D85900E9304A /* Preview Content */,
 			);
@@ -96,6 +106,7 @@
 			children = (
 				0B8D05D626448B1D0058B80D /* Album.swift */,
 				0B8D05D92644AFE50058B80D /* Feed.swift */,
+				0B71694C2645BEB4008FC194 /* Response.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -103,6 +114,8 @@
 		0B8D05CF26446C9B0058B80D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0B89365E2638D85900E9304A /* LaunchScreen.storyboard */,
+				0B8936572638D85800E9304A /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				0B8D05D226446CCD0058B80D /* RSSViewModel.swift */,
+				0B7169412645A1BD008FC194 /* AlbumViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -246,9 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B71694D2645BEB4008FC194 /* Response.swift in Sources */,
 				0B8936542638D85800E9304A /* AppDelegate.swift in Sources */,
 				0B8D05DA2644AFE50058B80D /* Feed.swift in Sources */,
 				0B8D05D326446CCD0058B80D /* RSSViewModel.swift in Sources */,
+				0B7169422645A1BD008FC194 /* AlbumViewModel.swift in Sources */,
 				0B8936562638D85800E9304A /* SceneDelegate.swift in Sources */,
 				0B8936582638D85800E9304A /* ContentView.swift in Sources */,
 				0B8D05D726448B1D0058B80D /* Album.swift in Sources */,
