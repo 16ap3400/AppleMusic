@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var vm = RSSViewModel()
+    @ObservedObject var vm = AlbumViewModel()
     
     var body: some View {
         NavigationView {
