@@ -19,53 +19,64 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
+            ScrollView {
                 LazyVGrid (columns: gridItems,
                            alignment: .center,
                            spacing: 20,
                            pinnedViews: [.sectionHeaders, .sectionFooters]
                 ) {
                     ForEach (0..<vm.albums.count, id: \.self) { i in
-                        VStack{
-                            URLImage(url: URL(string: vm.albums[i].artworkUrl100)!,
-                                     content: { image in
-                                        image
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .cornerRadius(10)
-                                     })
-                                .frame(width: 150, height: 150)
-                            HStack {
-                                Text("\(i+1)")
-                                    .font(.title)
-                                    .fontWeight(.bold)
-                                VStack(alignment: .leading){
-                                    Text("\(vm.albums[i].name)")
-                                        .lineLimit(1)
-                                        .font(.system(size: 16, weight: .regular, design: .rounded))
+                        NavigationLink(
+                            destination: DetailView(url: vm.albums[i].artistUrl),
+                            label: {
+                                VStack{
+                                    URLImage(url: URL(string: vm.albums[i].artworkUrl100)!,
+                                             content: { image in
+                                                image
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .cornerRadius(10)
+                                             })
+                                        .frame(width: 150, height: 150)
                                     HStack {
-                                        Text("\(vm.albums[i].artistName)")
-                                            .lineLimit(1)
-                                            .font(.system(size: 14, weight: .light, design: .rounded))
-                                            .foregroundColor(.gray)
+                                        Text("\(i+1)")
+                                            .font(.title)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.black)
+                                        VStack(alignment: .leading){
+                                            Text("\(vm.albums[i].name)")
+                                                .lineLimit(1)
+                                                .font(.system(size: 16, weight: .regular, design: .rounded))
+                                                .foregroundColor(.black)
+                                            HStack {
+                                                Text("\(vm.albums[i].artistName)")
+                                                    .lineLimit(1)
+                                                    .font(.system(size: 14, weight: .light, design: .rounded))
+                                                    .foregroundColor(.gray)
+                                                Spacer()
+                                            }
+                                        }
+                                        
                                         Spacer()
+                                        
+                                        
                                     }
+                                    
+                                    
                                 }
-                                
-                                Spacer()
-                                
-                                
-                            }
-                            
-                            
-                        }
-                        .frame(width: 150)
+                                .frame(width: 150)
+                            })
+                        
                         
                     }
                 }
-                
             }
             .navigationBarTitle("Top 25 Albums")
+
+            
+                
+            
+            
             
         }
         .onAppear(perform: {
