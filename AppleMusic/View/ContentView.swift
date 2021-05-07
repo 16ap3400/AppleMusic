@@ -13,13 +13,12 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                List(vm.albums){ album in
-                    HStack {
-                        Text(album.name)
-                    }
+            List {
+                ForEach (0..<vm.albums.count, id: \.self) { i in
+                    Text("\(i) : \(vm.albums[i].name)")
                 }
             }
+            .navigationBarTitle("Top 25 Albums")
             
         }
         .onAppear(perform: {
