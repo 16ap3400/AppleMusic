@@ -13,5 +13,5 @@ struct Album: Decodable, Identifiable {
     let name: String
     let contentAdvisoryRating: String?
     let artworkUrl100: String
-    let artistUrl: String
+    let url: String
 }

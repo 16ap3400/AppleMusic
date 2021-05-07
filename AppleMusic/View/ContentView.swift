@@ -27,7 +27,7 @@ struct ContentView: View {
                 ) {
                     ForEach (0..<vm.albums.count, id: \.self) { i in
                         NavigationLink(
-                            destination: DetailView(url: vm.albums[i].artistUrl),
+                            destination: DetailView(url: vm.albums[i].url),
                             label: {
                                 VStack{
                                     URLImage(url: URL(string: vm.albums[i].artworkUrl100)!,
