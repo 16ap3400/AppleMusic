@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct ContentView: View {
     
@@ -15,7 +16,17 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach (0..<vm.albums.count, id: \.self) { i in
-                    Text("\(i) : \(vm.albums[i].name)")
+                    VStack{
+                        Text("\(i+1) : \(vm.albums[i].name)")
+                        URLImage(url: URL(string: vm.albums[i].artworkUrl100)!,
+                                 content: { image in
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                 })
+                            .frame(width: 100, height: 100)
+                    }
+                    
                 }
             }
             .navigationBarTitle("Top 25 Albums")
