@@ -10,9 +10,9 @@ import URLImage
 
 struct ContentView: View {
     
-    @ObservedObject var vm = AlbumViewModel()
+    @ObservedObject private var vm = AlbumViewModel()
     
-    var gridItems: [GridItem] = [
+    private var gridItems: [GridItem] = [
         GridItem(.fixed(150), spacing: 30),
         GridItem(.fixed(150), spacing: 30)
     ]
@@ -66,21 +66,13 @@ struct ContentView: View {
                                 }
                                 .frame(width: 150)
                             })
-                        
-                        
                     }
                 }
             }
             .navigationBarTitle("Top 25 Albums")
 
-            
-                
-            
-            
-            
         }
         .onAppear(perform: {
-//            vm.fetchTopAlbums()
             vm.fetchAlamoFire()
         })
     }
