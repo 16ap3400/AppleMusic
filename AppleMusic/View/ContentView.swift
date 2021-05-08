@@ -73,7 +73,7 @@ struct ContentView: View {
 
         }
         .onAppear(perform: {
-            vm.fetchAlamoFire()
+            vm.handleOnAppear()
         })
     }
 }
