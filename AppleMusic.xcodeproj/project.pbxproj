@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B6D4FD526473FFC008A5E1C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D4FD426473FFC008A5E1C /* DataService.swift */; };
 		0B71694D2645BEB4008FC194 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B71694C2645BEB4008FC194 /* Response.swift */; };
 		0B7169582645DA3A008FC194 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7169572645DA3A008FC194 /* DetailView.swift */; };
 		0B71695B2645DAC4008FC194 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B71695A2645DAC4008FC194 /* WebView.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B6D4FD426473FFC008A5E1C /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		0B71694C2645BEB4008FC194 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		0B7169572645DA3A008FC194 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		0B71695A2645DAC4008FC194 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				0B8D05D626448B1D0058B80D /* Album.swift */,
 				0B8D05D92644AFE50058B80D /* Feed.swift */,
 				0B71694C2645BEB4008FC194 /* Response.swift */,
+				0B6D4FD426473FFC008A5E1C /* DataService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				0B71695B2645DAC4008FC194 /* WebView.swift in Sources */,
 				0B8936582638D85800E9304A /* ContentView.swift in Sources */,
 				0B8D05D726448B1D0058B80D /* Album.swift in Sources */,
+				0B6D4FD526473FFC008A5E1C /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
