@@ -80,7 +80,8 @@ struct ContentView: View {
             
         }
         .onAppear(perform: {
-            vm.fetchTopAlbums()
+//            vm.fetchTopAlbums()
+            vm.fetchAlamoFire()
         })
     }
 }

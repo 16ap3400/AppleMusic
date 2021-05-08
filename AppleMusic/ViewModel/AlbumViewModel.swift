@@ -47,4 +47,13 @@ class AlbumViewModel: ObservableObject {
         }
     }
 
+    func fetchAlamoFire() {
+        let request = AF.request("https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/25/explicit.json")
+        request.validate()
+        request.responseDecodable(of: Response.self) { (response) in
+            guard let root = response.value else {return}
+            self.albums = root.feed.results
+            print(root.feed.results[0])
+        }
+    }
 }
