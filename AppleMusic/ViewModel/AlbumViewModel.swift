@@ -16,14 +16,15 @@ class AlbumViewModel: ObservableObject {
     
     func fetchTopAlbums() {
         
+            // To choose explicit vs non-explicit
         var contentType: String
-        
         if explicit {
             contentType = "explicit"
         } else {
             contentType = "non-explicit"
         }
         
+            // fetch data
         if let url  = URL(string: "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/25/" + contentType + ".json") {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
