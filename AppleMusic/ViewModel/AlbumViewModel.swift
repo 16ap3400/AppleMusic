@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class AlbumViewModel: ObservableObject {
     
@@ -45,4 +46,5 @@ class AlbumViewModel: ObservableObject {
             task.resume()
         }
     }
+
 }
