@@ -25,7 +25,7 @@ struct AlbumsMainView: View {
                            spacing: 20,
                            pinnedViews: [.sectionHeaders, .sectionFooters]
                 ) {
-                    ForEach (0..<vm.albums.count, id: \.self) { i in
+                    ForEach (0..<(vm.albums.count>0 ? 25 : 0), id: \.self) { i in
                         NavigationLink(
                             destination: DetailView(url: vm.albums[i].url),
                             label: {

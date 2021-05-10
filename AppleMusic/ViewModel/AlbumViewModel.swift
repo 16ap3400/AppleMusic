@@ -20,13 +20,13 @@ class AlbumViewModel: ObservableObject {
     }
     
     func handleOnAppear() {
-        webService.fetchAlamoFire(url:  "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json") { albums in
-            self.albums = albums!
-        }
-        
-//        dataService.fetchURLSession(url: URL(string: "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/25/explicit.json")!) { albums in
+//        webService.fetchAlamoFire(url:  "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json") { albums in
 //            self.albums = albums!
 //        }
+        
+        webService.fetchURLSession(url: URL(string: "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json")!) { albums in
+            self.albums = albums!
+        }
     }
     
     func handleTestDataOnAppear() {
