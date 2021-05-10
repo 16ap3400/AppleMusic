@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class DataService {
+class WebService {
     func fetchURLSession(url: URL, completion: @escaping ([Album]?) -> ()) {
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {

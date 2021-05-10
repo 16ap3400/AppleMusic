@@ -13,14 +13,14 @@ class AlbumViewModel: ObservableObject {
     @Published var albums: [Album] = [Album]()
     @Published var explicit: Bool = true
     
-    private let dataService: DataService
+    private let webService: WebService
     
-    init(dataService: DataService = DataService()) {
-        self.dataService = dataService
+    init(dataService: WebService = WebService()) {
+        self.webService = dataService
     }
     
     func handleOnAppear() {
-        dataService.fetchAlamoFire(url:  "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/25/explicit.json") { albums in
+        webService.fetchAlamoFire(url:  "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/25/explicit.json") { albums in
             self.albums = albums!
         }
         

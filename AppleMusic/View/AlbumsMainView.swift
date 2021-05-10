@@ -8,7 +8,7 @@
 import SwiftUI
 import URLImage
 
-struct ContentView: View {
+struct AlbumsMainView: View {
     
     @ObservedObject private var vm = AlbumViewModel()
     
@@ -43,6 +43,7 @@ struct ContentView: View {
                                             .font(.title)
                                             .fontWeight(.bold)
                                             .foregroundColor(.black)
+                                            
                                         VStack(alignment: .leading){
                                             Text("\(vm.albums[i].name)")
                                                 .lineLimit(1)
@@ -65,9 +66,11 @@ struct ContentView: View {
                                     
                                 }
                                 .frame(width: 150)
+                                .accessibilityIdentifier("item\(i)")
                             })
                     }
                 }
+                    .accessibilityIdentifier("albumGrid")
             }
             .navigationBarTitle("Top 25 Albums")
 
@@ -80,6 +83,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        AlbumsMainView()
     }
 }
