@@ -151,10 +151,10 @@
 		0B8D05CF26446C9B0058B80D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0B89365E2638D85900E9304A /* LaunchScreen.storyboard */,
 				0B8936572638D85800E9304A /* AlbumsMainView.swift */,
 				0B7169572645DA3A008FC194 /* DetailView.swift */,
 				0B71695A2645DAC4008FC194 /* WebView.swift */,
+				0B89365E2638D85900E9304A /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
