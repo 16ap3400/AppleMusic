@@ -6,78 +6,65 @@
 //
 
 import SwiftUI
-import URLImage
 
 struct AlbumsMainView: View {
     
     @ObservedObject private var vm = AlbumViewModel()
     
+    let wid = UIScreen.main.bounds.width * 0.4
+    @State var showFavorites: Bool = false
+    
     private var gridItems: [GridItem] = [
-        GridItem(.fixed(150), spacing: 30),
-        GridItem(.fixed(150), spacing: 30)
+        GridItem(.fixed(UIScreen.main.bounds.width * 0.4), spacing: UIScreen.main.bounds.width * 0.05),
+        GridItem(.fixed(UIScreen.main.bounds.width * 0.4), spacing: UIScreen.main.bounds.width * 0.05)
     ]
     
     var body: some View {
         NavigationView {
             ScrollView {
+                VStack {
+                    Toggle(isOn: $showFavorites, label: {
+                        Text(showFavorites ? "Favorites" : "All")
+                    })
+                }
+                .padding()
                 LazyVGrid (columns: gridItems,
                            alignment: .center,
                            spacing: 20,
                            pinnedViews: [.sectionHeaders, .sectionFooters]
                 ) {
-                    ForEach (0..<(vm.albums.count>0 ? 25 : 0), id: \.self) { i in
-                        NavigationLink(
-                            destination: DetailView(url: vm.albums[i].url),
-                            label: {
-                                VStack{
-                                    URLImage(url: URL(string: vm.albums[i].artworkUrl100)!,
-                                             content: { image in
-                                                image
-                                                    .resizable()
-                                                    .aspectRatio(contentMode: .fit)
-                                                    .cornerRadius(10)
-                                             })
-                                        .frame(width: 150, height: 150)
-                                    HStack {
-                                        Text("\(i+1)")
-                                            .font(.title)
-                                            .fontWeight(.bold)
-                                            .foregroundColor(.black)
-                                            
-                                        VStack(alignment: .leading){
-                                            Text("\(vm.albums[i].name)")
-                                                .lineLimit(1)
-                                                .font(.system(size: 16, weight: .regular, design: .rounded))
-                                                .foregroundColor(.black)
-                                            HStack {
-                                                Text("\(vm.albums[i].artistName)")
-                                                    .lineLimit(1)
-                                                    .font(.system(size: 14, weight: .light, design: .rounded))
-                                                    .foregroundColor(.gray)
-                                                Spacer()
-                                            }
-                                        }
-                                        
-                                        Spacer()
-                                        
-                                        
-                                    }
-                                    
-                                    
-                                }
-                                .frame(width: 150)
-                                .accessibilityIdentifier("item\(i)")
-                            })
+                    ForEach (0..<(vm.albums.count), id: \.self) { i in
+                        if showFavorites {
+                            if vm.albums[i].isFavorited {
+                                NavigationLink(
+                                    destination: DetailView(url: vm.albums[i].url),
+                                    label: {
+                                        SingleAlbumView(viewmodel: vm, index: i)
+                                        .frame(width: 150)
+                                        .accessibilityIdentifier("item\(i)")
+                                    })
+                            }
+                        } else {
+                            NavigationLink(
+                                destination: DetailView(url: vm.albums[i].url),
+                                label: {
+                                    SingleAlbumView(viewmodel: vm, index: i)
+                                    .frame(width: 150)
+                                    .accessibilityIdentifier("item\(i)")
+                                })
+                        }
                     }
+                    
+                        
                 }
                     .accessibilityIdentifier("albumGrid")
             }
-            .navigationBarTitle("Top 100 Albums")
+            .navigationBarTitle("Top 25 Albums")
 
         }
         .onAppear(perform: {
-            vm.handleOnAppear()
-//            vm.handleTestDataOnAppear()
+//            vm.handleOnAppear()
+            vm.handleTestDataOnAppear()
         })
     }
 }

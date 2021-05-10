@@ -19,6 +19,16 @@ class AlbumViewModel: ObservableObject {
         self.webService = dataService
     }
     
+    func countFavoritedAlbums() -> Int{
+        var count = 0
+        for i in 0..<albums.count {
+            if albums[i].isFavorited {
+                count += 1
+            }
+        }
+        return count
+    }
+    
     func handleOnAppear() {
 //        webService.fetchAlamoFire(url:  "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json") { albums in
 //            self.albums = albums!

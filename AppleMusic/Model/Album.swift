@@ -9,6 +9,7 @@ import Foundation
 
 struct Album: Decodable, Identifiable {
     var id: String
+    var isFavorited: Bool = false
     let artistName: String
     let name: String
     let contentAdvisoryRating: String?
