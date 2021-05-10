@@ -76,7 +76,8 @@ struct AlbumsMainView: View {
 
         }
         .onAppear(perform: {
-            vm.handleOnAppear()
+//            vm.handleOnAppear()
+            vm.handleTestDataOnAppear()
         })
     }
 }
