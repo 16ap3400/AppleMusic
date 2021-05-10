@@ -72,12 +72,12 @@ struct AlbumsMainView: View {
                 }
                     .accessibilityIdentifier("albumGrid")
             }
-            .navigationBarTitle("Top 25 Albums")
+            .navigationBarTitle("Top 100 Albums")
 
         }
         .onAppear(perform: {
-//            vm.handleOnAppear()
-            vm.handleTestDataOnAppear()
+            vm.handleOnAppear()
+//            vm.handleTestDataOnAppear()
         })
     }
 }
